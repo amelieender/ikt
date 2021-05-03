@@ -6,7 +6,15 @@
   "scripts": {
     "start": "http-server -c-1"
   },
-  "keywords": ["pwa", "progressive", "web", "app", "ikt", "htw", "fiw"],
+  "keywords": [
+    "pwa",
+    "progressive",
+    "web",
+    "app",
+    "ikt",
+    "htw",
+    "fiw"
+  ],
   "author": "J. freiheit",
   "license": "ISC",
   "devDependencies": {
