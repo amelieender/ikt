@@ -1,44 +1,85 @@
 {
-    "name": "HTW-Insta Erweiterung",
     "short_name": "HTW-Insta",
-    "start_url": "/index.html",
-    "display": "standalone",
-    "background_color": "#76B900",
-    "description": "Eine tolle HTW-Insta-PWA",
-    "lang": "de-DE",
+    "name": "HTW-Insta",
+    "lang": "de",
+    "description": "My version of the HTW-Instagram-Application",
+    "start_url": "/",
+    "background_color": "#afafaf",
+    "theme_color": "#ff5f00",
     "dir": "ltr",
-    "orientation": "portrait-primary",
+    "display": "standalone",
+    "orientation": "any",
     "icons": [
-      {
-          "src": "/src/images/icons/fiw48x48.png",
-          "type": "image/png",
-          "sizes": "48x48"
-      },
-      {
-          "src": "/src/images/icons/fiw72x72.png",
-          "type": "image/png",
-          "sizes": "72x72"
-      },
-      {
-          "src": "/src/images/icons/fiw96x96.png",
-          "type": "image/png",
-          "sizes": "96x96"
-      },
-      {
-          "src": "/src/images/icons/fiw128x128.png",
-          "type": "image/png",
-          "sizes": "128x128"
-      },
-      {
-          "src": "/src/images/icons/fiw256x256.png",
-          "type": "image/png",
-          "sizes": "256x256"
-      },
-      {
-          "src": "/src/images/icons/fiw484x484.png",
-          "type": "image/png",
-          "sizes": "484x484"
-      }
-    ]
-  }
-  
+    {
+        "src": "/src/images/moons/moon512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+    },
+     {
+      "src": "/src/images/moons/moon192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+     },
+     {
+      "src": "/src/images/moons/moon180.png",
+      "type": "image/png",
+      "sizes": "180x180"
+     },
+     {
+      "src": "/src/images/moons/moon152.png",
+      "type": "image/png",
+      "sizes": "152x152"
+     },
+     {
+      "src": "/src/images/moons/moon144.png",
+      "type": "image/png",
+      "sizes": "144x144"
+     },
+     {
+      "src": "/src/images/moons/moon120.png",
+      "type": "image/png",
+      "sizes": "120x120"
+     },
+     {
+      "src": "/src/images/moons/moon114.png",
+      "type": "image/png",
+      "sizes": "114x114"
+     },
+     {
+      "src": "/src/images/moons/moon96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+     },
+     {
+      "src": "/src/images/moons/moon76.png",
+      "type": "image/png",
+      "sizes": "76x76"
+     },
+     {
+      "src": "/src/images/moons/moon72.png",
+      "type": "image/png",
+      "sizes": "72x72"
+     },
+     {
+      "src": "/src/images/moons/moon60.png",
+      "type": "image/png",
+      "sizes": "60x60"
+     },
+     {
+      "src": "/src/images/moons/moon57.png",
+      "type": "image/png",
+      "sizes": "57x57"
+     },
+     {
+      "src": "/src/images/moons/moon32.png",
+      "type": "image/png",
+      "sizes": "32x32"
+     },
+     {
+      "src": "/src/images/moons/moon16.png",
+      "type": "image/png",
+      "sizes": "16x16"
+     }
+    ],
+    "prefer_related_applications": "false"
+   }
