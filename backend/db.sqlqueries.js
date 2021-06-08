@@ -7,6 +7,18 @@ export const PostService = {
             else result(null, { id: res.postId, ...newPost });
         });
     },
+
+    findByTitle: async(title, result) => {
+        sql.query(
+            `SELECT * FROM posts WHERE title = ?`, [title],
+            (err, res) => {
+                if (err) result(err, null);
+                else if (res.length) result(null, res);
+                else result({ message: "post not found" }, null);
+            }
+        );
+    },
+    
     findById: async(postId, result) => {
         sql.query(
             `SELECT * FROM posts WHERE id = ?`, [postId],

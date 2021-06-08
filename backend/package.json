@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "watch": "nodemon ./server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha ./tests.js"
   },
   "keywords": [
     "IKT",
@@ -23,6 +23,9 @@
     "mysql": "^2.18.1"
   },
   "devDependencies": {
+    "chai": "^4.3.4",
+    "chai-http": "^4.3.0",
+    "mocha": "^9.0.0",
     "nodemon": "^2.0.7"
   }
 }

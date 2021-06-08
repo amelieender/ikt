@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import { PostController } from './posts.controller.js';
 
-const app = express();
+export const app = express();
 const PORT = 3000;
 
 app.use(cors());
@@ -16,6 +16,7 @@ app.get('/', (request, response) => {
 // Endpunkte definieren
 app.post("/posts", PostController.create); // C
 app.get("/posts", PostController.readAll); // R (all)
+app.get("/posts/title", PostController.readOneByTitle); 
 app.get("/posts/:postId", PostController.readOne); // R (one)
 app.put("/posts/:postId", PostController.update); // U
 app.delete("/posts/:postId", PostController.delete); // D
