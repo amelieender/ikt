@@ -28,4 +28,15 @@ export class BackendService {
       })
       .toPromise();
   }
+
+  public readAll(): Promise<Post[]>{
+    return this.http
+    .get<Post[]>(`${this.apiUrl}`, {
+      headers: new HttpHeaders({ 
+        'Content-Type': 'application/json',
+        'Accept-Type': 'application/json',
+      }),
+    })
+    .toPromise();
+  }
 }

@@ -16,12 +16,15 @@ import { MatInputModule } from '@angular/material/input';
 import { CreateComponent } from './create/create.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ReadComponent } from './read/read.component';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    CreateComponent
+    CreateComponent,
+    ReadComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
