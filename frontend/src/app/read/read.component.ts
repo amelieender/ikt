@@ -16,24 +16,13 @@ export class ReadComponent implements OnInit {
 
   ngOnInit(): void {
     this.bs.readAll()
-    .then(res => {
-      console.log(res);
-      return res;
-    })
-    .then (arr => {
-      this.allPosts = arr;
-      arr.forEach(el => console.log(el));
+    .then( posts => {
+      this.allPosts = posts;
+      console.log(posts);
     })
     .catch( err => {
       console.log(err);
     })
-    // .then( posts => {
-    //   this.allPosts = posts;
-    //   console.log(posts);
-    // })
-    // .catch( err => {
-    //   console.log(err);
-    // })
   }
 
   imgSrc(base64code: string): SafeResourceUrl {

@@ -42,7 +42,8 @@ export class CreateComponent implements OnInit {
         id: null,
         title: this.inp_title.value,
         location: this.inp_location.value,
-        image: this.inp_image.value
+        image: this.imageBase64
+        // image: this.inp_image.value
       }
       console.log('post : ', post);
       await this.bs.addPost(post);
