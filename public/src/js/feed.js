@@ -2,6 +2,7 @@ let shareImageButton = document.querySelector('#share-image-button');
 let createPostArea = document.querySelector('#create-post');
 let closeCreatePostModalButton = document.querySelector('#close-create-post-modal-btn');
 let sharedMomentsArea = document.querySelector('#shared-moments');
+let networkDataReceived = false;
 
 function openCreatePostModal() {
   createPostArea.style.display = 'block';
@@ -53,5 +54,17 @@ fetch('http://localhost:3000/posts')
       return res.json();
     })
     .then(data => {
+      networkDataReceived = true;
+        console.log('From backend ...', data);
       updateUI(data);
     });
+
+if('indexedDB' in window) {
+  readAllData('posts')
+    .then( data => {
+      if(!networkDataReceived) {
+          console.log('From cache ...', data);
+          updateUI(data);
+              }
+      })
+  }

@@ -1,7 +1,8 @@
 importScripts('/src/js/idb.js');
+importScripts('/src/js/db.js');
 
-const CURRENT_STATIC_CACHE = 'static-v2';
-const CURRENT_DYNAMIC_CACHE = 'dynamic-v2';
+const CURRENT_STATIC_CACHE = 'static-v4';
+const CURRENT_DYNAMIC_CACHE = 'dynamic-v4';
 const STATIC_FILES = [
     '/',
     '/index.html',
@@ -9,6 +10,7 @@ const STATIC_FILES = [
     '/src/js/feed.js',
     '/src/js/material.min.js',
     '/src/js/idb.js',
+    // '/src/js/db.js',
     '/src/css/app.css',
     '/src/css/feed.css',
     '/src/images/htw.jpg',
@@ -28,10 +30,10 @@ self.addEventListener('install', event => {
     );
 })
 
-const db = idb.openDB('posts-store', 1, {
-    upgrade(db) {
+const db2 = idb.openDB('posts-store', 1, {
+    upgrade(db2) {
         // Create a store of objects
-        const store = db.createObjectStore('posts', {
+        const store = db2.createObjectStore('posts', {
             // The 'id' property of the object will be the key.
             keyPath: 'id',
             // If it isn't explicitly set, create a value by auto incrementing.
@@ -69,6 +71,20 @@ self.addEventListener('fetch', event => {
             fetch(event.request)
                 .then ( res => {
                     // hier Anfrage an http://localhost:3000/posts behandeln
+                    const clonedResponse = res.clone();
+                    clearAllData('posts')
+                    .then( () => {
+                        return clonedResponse.json();
+                    })
+                    .then( data => {
+                        for(let key in data)
+                        {
+                            console.log('write data', data[key]);
+                            writeData('posts', data[key]);
+                            //nur zum Testen
+                            if(data[key].id === 9) deleteOneData('posts', 5);
+                        }
+                    });
                     return res;
                 })
         )
